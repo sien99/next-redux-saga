@@ -1,8 +1,9 @@
 # Bossjob Frontend Test
 
 ## Instruction
-Please implement the job list page as per design (job-list-design.jpg). 
-Please use this git repository as a starter kit. This has been created using [Next.js](https://nextjs.org/), project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app). 
+#### Please implement the job list page as per design (job-list-design.jpg). <br/>
+
+Use this git repository as a starter kit. This has been created using [Next.js](https://nextjs.org/), project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app). 
 
 Node Version: v16.0.0
 
@@ -68,10 +69,10 @@ You could ignore the rest of the keys.
 
 ## Other Resources  
 *Icons:* <br/>
-https://assets.bossjob.com/website/pin.svg
-https://assets.bossjob.com/website/briefcase.svg
-https://assets.bossjob.com/website/education.svg
-https://assets.bossjob.com/website/clock.svg
+https://assets.bossjob.com/website/pin.svg <br/>
+https://assets.bossjob.com/website/briefcase.svg <br/>
+https://assets.bossjob.com/website/education.svg <br/>
+https://assets.bossjob.com/website/clock.svg <br/>
 
 *Redux Saga:* <br/>
 https://github.com/kirill-konshin/next-redux-wrapper
