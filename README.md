@@ -1,34 +1,81 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Bossjob Frontend Test
 
-## Getting Started
+## Instruction
+Please implement the job list page as per design (job-list-design.jpg). 
+Please use this git repository as a starter kit. This has been created using [Next.js](https://nextjs.org/), project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app). 
 
-First, run the development server:
+Node Version: v16.0.0
 
-```bash
-npm run dev
-# or
-yarn dev
+**UI library is strongly discouraged**.
+
+The app should have/be able to do the following:
+1. Listing of the first 12 jobs
+2. Able to search for job by title or company name
+3. Clicking on each job navigates user to `/job/{job-title}` page (You may leave the UI of this page blank).
+4. Fetch data using redux-saga
+5. Pagination 
+
+*Additional points for the following implementations:* 
+- Typescript 
+- File/code structures
+- Anything you would like to showcase, impress us with your skills :) 
+
+<br/>
+
+## API Endpoint
+Please use this provided api to retrieve the job list. 
+`https://search.bossjob.com/api/v1/search/job_filter?size=10&query=`
+
+```
+size - to specify number of jobs to be retrieved (default is 4)
+query - to specify which job title / company name to be retrieved
+page - to specify the page to be retrieved
+
+```
+------
+
+Below will be the necessary key that you will use from the JSON response
+
+```
+{
+    "message": "OK",
+    "data": {
+        "jobs": [
+            {
+                "id": 17348,
+                "degree": "Diploma",
+                "job_title": "System Engineer",
+                "job_country": "Philippines",
+                "job_type": "Full-time",
+                "job_location": "Makati",
+                "salary_range_from": 30000,
+                "salary_range_to": 40000,
+                "company_name": "wealth access inc.",
+                "company_location": "Makati",
+                "xp_lvl": "3 - 5 years",
+            }
+        ],
+        "page": 1,
+        "size": 10,
+        "total_num": 265,
+        "sort": 1
+
+    }
+}
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+You could ignore the rest of the keys.
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+## Other Resources  
+*Icons:* <br/>
+https://assets.bossjob.com/website/pin.svg
+https://assets.bossjob.com/website/briefcase.svg
+https://assets.bossjob.com/website/education.svg
+https://assets.bossjob.com/website/clock.svg
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+*Redux Saga:* <br/>
+https://github.com/kirill-konshin/next-redux-wrapper
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+<br/>
 
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+## All the best & have fun ! 
