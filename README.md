@@ -24,7 +24,7 @@ The app should have/be able to do the following:
 
 ## API Endpoint
 Please use this provided api to retrieve the job list. 
-`https://search.bossjob.com/api/v1/search/job_filter?size=10&query=`
+`https://api.bossjob.com/job/api/v1/jobs/filter?size=10&query=`
 
 ```
 size - to specify number of jobs to be retrieved (default is 4)
