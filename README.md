@@ -3,7 +3,7 @@
 ## Instruction
 #### Please implement the job list page as per design (job-list-design.jpg). <br/>
 
-Use this git repository as a starter kit. This has been created using [Next.js](https://nextjs.org/), project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app). 
+Please fork and use this git repository as a starter kit. This has been created using [Next.js](https://nextjs.org/), project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app). 
 
 Node Version: v16.0.0
 
@@ -25,7 +25,7 @@ The app should have/be able to do the following:
 
 ## API Endpoint
 Please use this provided api to retrieve the job list. 
-`https://api.bossjob.com/job/api/v1/jobs/filter?size=10&query=`
+`https://api.bossjob.com/jobs/filter?size=10&query=`
 
 ```
 size - to specify number of jobs to be retrieved (default is 4)
