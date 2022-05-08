@@ -6,8 +6,9 @@ const SET_JOB = "SET_JOB";
 
 // Action Creators
   
-export const getJob = () => ({
-    type: GET_JOB 
+export const getJob = (query) => ({
+    type: GET_JOB,
+    queryAtReducer: query,
 });
 
 export const setJob = (job) => ({

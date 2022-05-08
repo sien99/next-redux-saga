@@ -5,8 +5,9 @@ import { requestGetJobs } from '../requests/job';
 export function* handleGetJob(action) {
     // handler function CALL requestJob => PUT into redux store
     try {
+        console.log(action);
         // CALL request function, yield similar to await
-        const response = yield call(requestGetJobs);
+        const response = yield call(requestGetJobs,action.queryAtReducer);
         const { data } = response;
 
         // PUT into redux store

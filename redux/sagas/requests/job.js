@@ -1,10 +1,17 @@
 import axios from 'axios';
 
-export function requestGetJobs (query) {
-    query = "engineer"
+export function requestGetJobs (queryAtReducer) {
+    // console.log(query)
+    // if(query.length===0) query = "null";
+    console.log(queryAtReducer)
+    const size = 12;
+    let {query, page} = queryAtReducer || {'query': query || null, 'page':1};
+    query = encodeURIComponent(query);
+    const url = `https://api.bossjob.com/jobs/filter?size=${size}&page=${page}&query=${query}`;
+    console.log(url);
     return axios.request({
         method: 'get',
-        url: `https://api.bossjob.com/jobs/filter?size=10&query=${query}`,
+        url: url,
     });
 };
 
