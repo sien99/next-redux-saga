@@ -4,14 +4,16 @@ import styles from '../../styles/Job.module.css'
 
 const Job = (props) => {
   return (
+    <Link href={`/job/${props.job_title}`} >
     <div className={`job-container ${styles.pointer}`} >
+    
         <div className="job-header">    
-            <Link href={`/job/${props.job_title}`} >
+            
             
                 <p className="job-header-title" >
                     {props.job_title.slice(0,65)}
                 </p>                
-            </Link>
+            
 
             <p>
             {   
@@ -56,6 +58,7 @@ const Job = (props) => {
             <p>{props.company_name}</p>
         </div>
     </div>
+    </Link>
   )
 }
 
