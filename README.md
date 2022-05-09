@@ -26,7 +26,7 @@ $ npm install
 $ npm run dev
 ```
 * Alternatively, view it on Codesandbox:
-### Codesandbox [link](https://codesandbox.io/s/react-redux-saga-r3egzr)
-#### Need to access https://cors-anywhere.herokuapp.com/ to enable proxy for API call
+  - Codesandbox [link](https://codesandbox.io/s/react-redux-saga-r3egzr)
+   (Note: need to visit https://cors-anywhere.herokuapp.com/ and request access to proxy for API call)
 
-*Both local/sandbox support redux dev tools
+_Note: Both local/sandbox support redux dev tools_
