@@ -47,7 +47,7 @@ const Main = () => {
 
     // get job object from job reducer
     const job = useSelector((state) => state.job.job);
-    
+
     // display job if change detected in query && query submitted
     useEffect(() => {
         console.log("Rendered: ", page);
@@ -79,6 +79,7 @@ const Main = () => {
             "company_location":job.company_location,
             "xp_lvl":job.xp_lvl,
             "company_logo": job.company_logo,
+            
         })));
 
         // console.log(jobList)
