@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import { AiOutlineSearch } from 'react-icons/ai';
 import { FcPrevious, FcNext } from 'react-icons/fc';
 import { useDispatch, useSelector } from 'react-redux';
@@ -7,15 +7,20 @@ import Job from '../Job/Job';
 
 const Main = () => {
     const dispatch = useDispatch();
+
     const [jobList, setJobList] = useState([]);
     const [query, setQuery] = useState('');
     const [isSubmit, setIsSubmit] = useState(true);
-    const [page, setPage] = useState(1);
 
+    const [page, setPage] = useState(1);
     const [totalPages, setTotalPages] = useState({pages:0,num:0});
     
+    const queryCache = useRef('');
+
     const handleChange = (e) => {
         setQuery(e.target.value);
+        // user edit query, setSubmit false so will not dispatch query
+        setIsSubmit(false);
     }
 
     const handleKeyPress = (e) => {
@@ -24,14 +29,20 @@ const Main = () => {
 
     useEffect(() => {
         console.log("Dispatch: ", query);
-        dispatch(getJob({
-            query:query,
-            page: page,
-        }));
-        // axios.request({
-        //     method: 'get',
-        //     url: `https://api.bossjob.com/jobs/filter?size=10&query=engineer`,
-        // }).then ((res)=>console.log(res))
+        if(isSubmit) {
+            dispatch(getJob({
+                query:query,
+                page: page,
+            }));
+
+            // reset page when query change
+            console.log("queryCache: "+ queryCache.current)
+            if(queryCache.current !== query) {
+                setPage(1)
+                queryCache.current = query
+            }
+        }
+        
     }, [dispatch,isSubmit,page]);
 
     // get job object from job reducer
@@ -40,13 +51,16 @@ const Main = () => {
     useEffect(() => {
         console.log("Rendered: ", page);
         if(isSubmit) getJobList();
+
     }, [job,page])
     
     const getJobList = () => {
         setIsSubmit(true);
         // https://crunchtech.medium.com/object-destructuring-best-practice-in-javascript-9c8794699a0d
-        const { jobs, total_pages, total_num } = job?.data || {};
-        console.log(jobs);
+        const { jobs, total_pages, total_num } = job?.data || {
+            jobs: [], total_pages: 0, total_num: 0
+        }; //! to handle NaN error
+        
         setTotalPages({
             pages: Math.min(total_pages,833), //query max at 833
             num: total_num
@@ -97,7 +111,7 @@ const Main = () => {
                         placeholder="Search for job title or company name"
                         onKeyPress= {handleKeyPress}
                         onChange={handleChange}
-                        onFocus={()=> setIsSubmit(false)}
+                        // onFocus={()=> setIsSubmit(false)}
                     />
                 </div>
 
