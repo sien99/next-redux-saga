@@ -5,21 +5,21 @@ export const GET_JOB = "GET_JOB";
 const SET_JOB = "SET_JOB";
 
 // Action Creators
-  
+
 export const getJob = (query) => ({
-    type: GET_JOB,
-    queryAtReducer: query,
+  type: GET_JOB,
+  queryAtReducer: query,
 });
 
 export const setJob = (job) => ({
-    type: SET_JOB,
-    job            // equivalent to job:job
+  type: SET_JOB,
+  job, // equivalent to job:job
 });
 
 const initState = {
-  job: undefined
+  job: undefined,
 };
-  
+
 // Reducer
 export default (state = initState, action) => {
   switch (action.type) {
@@ -28,12 +28,11 @@ export default (state = initState, action) => {
       const { job } = action;
       // eventhough we don't need state here because don't have other actions, its a good practice to return all other state
       return { ...state, job };
-    
-    default: return state;
+
+    default:
+      return state;
   }
-}
-
-
+};
 
 // side effects, only as applicable
 // e.g. thunks, epics, etc

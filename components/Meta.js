@@ -1,20 +1,19 @@
-import Head from 'next/head';
+import Head from "next/head";
 
 const Meta = ({ title }) => {
   return (
     <Head>
-        <title> {title} </title>
-        <meta name='keywords' content='job finder, web development'></meta>
+      <title> {title} </title>
+      <meta name='keywords' content='job finder, web development'></meta>
     </Head>
-  )
+  );
 };
 
 Meta.defaultProps = {
-    title: 'BossJob',
+  title: "BossJob",
 };
 
-export default Meta
-
+export default Meta;
 
 // import Head from 'next/head'
 

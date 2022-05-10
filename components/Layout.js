@@ -1,7 +1,6 @@
-import styles from '../styles/Layout.module.css'
-import Header from './Header/Header'
-import Meta from './Meta'
-
+import styles from "../styles/Layout.module.css";
+import Header from "./Header/Header";
+import Meta from "./Meta";
 
 const Layout = ({ children }) => {
   return (
@@ -14,8 +13,7 @@ const Layout = ({ children }) => {
         </main>
       </div>
     </>
+  );
+};
 
-  )
-}
-
-export default Layout
+export default Layout;

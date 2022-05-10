@@ -1,21 +1,20 @@
-import { call, put } from 'redux-saga/effects';
-import { setJob } from '../../modules/job';
-import { requestGetJobs } from '../requests/job';
+import { call, put } from "redux-saga/effects";
+import { setJob } from "../../modules/job";
+import { requestGetJobs } from "../requests/job";
 
 export function* handleGetJob(action) {
-    // handler function CALL requestJob => PUT into redux store
-    try {
-        console.log(action);
-        // CALL request function, yield similar to await
-        const response = yield call(requestGetJobs,action.queryAtReducer);
-        const { data } = response;
+  // handler function CALL requestJob => PUT into redux store
+  try {
+    console.log(action);
+    // CALL request function, yield similar to await
+    const response = yield call(requestGetJobs, action.queryAtReducer);
+    const { data } = response;
 
-        // PUT into redux store
-        yield put(setJob(data));
-
-    } catch (error) {
-        console.error(error);
-    }
+    // PUT into redux store
+    yield put(setJob(data));
+  } catch (error) {
+    console.error(error);
+  }
 }
 
 // sample response get from API call
